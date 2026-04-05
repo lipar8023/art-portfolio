@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Poems</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="index.html">Linya Li 李琳娅</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Work</a></li>
+      <li><a href="poems.html" class="active">Poems</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <div class="poems-header">
+      <h1>Poems</h1>
+      <p>A collection of writing.</p>
+    </div>
+
+    <!--
+      TO ADD A POEM:
+      Copy one of the <article class="poem"> blocks below,
+      paste it after the last one, and fill in:
+        - The <h2> title
+        - The <div class="poem-body"> text (line breaks are preserved)
+        - The <p class="poem-date"> date or note (optional)
+    -->
+
+    <article class="poem">
+      <h2>First Poem Title</h2>
+      <div class="poem-body">In the early light, before the day
+has learned what it intends,
+I find the window already knows
+which direction morning bends.
+
+The cup grows cold. A bird repeats
+its one plain note, insists.
+Some things are whole before they're named —
+the way the light persists.</div>
+      <p class="poem-date">2024</p>
+    </article>
+
+    <article class="poem">
+      <h2>Second Poem Title</h2>
+      <div class="poem-body">What the hand remembers
+the eye forgets —
+the weight of a stone,
+the grain of old wood,
+
+the way a door
+gives before it opens,
+just slightly,
+like a held breath.</div>
+      <p class="poem-date">2023</p>
+    </article>
+
+    <article class="poem">
+      <h2>Third Poem Title</h2>
+      <div class="poem-body">Rain in the afternoon
+makes a different sound
+on every surface —
+
+urgent on the glass,
+patient on the leaves,
+forgiving on the earth.</div>
+      <p class="poem-date">2023</p>
+    </article>
+
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Linya Li 李琳娅. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

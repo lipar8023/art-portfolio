@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Paintings</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="index.html">Linya Li 李琳娅</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Work</a></li>
+      <li><a href="poems.html">Poems</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ── Hero image ─────────────────────────────────────── -->
+    <div class="gallery-hero-wrapper">
+      <button class="hero-arrow" id="prev-btn" aria-label="Previous painting">&#8592;</button>
+
+      <div class="gallery-hero">
+        <!--
+          TO ADD YOUR PAINTINGS:
+          1. Place your image files in the images/ folder.
+          2. Change the src attributes below to match your filenames,
+             e.g. src="images/my-painting.jpg"
+          3. Update the data-title and data-caption attributes on each
+             thumbnail button to match each painting's info.
+        -->
+        <img
+          id="hero-img"
+          src="https://placehold.co/1100x830/e0ddd8/6b6b6b?text=Your+Painting+Here"
+          alt="Featured painting"
+        />
+      </div>
+
+      <button class="hero-arrow" id="next-btn" aria-label="Next painting">&#8594;</button>
+    </div>
+
+    <!-- ── Caption ────────────────────────────────────────── -->
+    <div class="gallery-caption">
+      <h2 id="hero-title">Painting Title</h2>
+      <p id="hero-caption">Medium · Year</p>
+    </div>
+
+    <!-- ── Thumbnails ─────────────────────────────────────── -->
+    <div class="gallery-thumbnails" id="thumbnails">
+
+      <!-- Each button: set data-src, data-title, data-caption to match your painting -->
+
+      <button
+        class="active"
+        data-src="https://placehold.co/1100x830/e0ddd8/6b6b6b?text=Your+Painting+Here"
+        data-title="Painting Title"
+        data-caption="Medium · Year"
+      >
+        <img src="https://placehold.co/180x140/e0ddd8/6b6b6b?text=1" alt="Painting 1 thumbnail" />
+      </button>
+
+      <button
+        data-src="https://placehold.co/1100x830/d4cfc9/6b6b6b?text=Painting+2"
+        data-title="Second Painting"
+        data-caption="Oil on canvas · 2024"
+      >
+        <img src="https://placehold.co/180x140/d4cfc9/6b6b6b?text=2" alt="Painting 2 thumbnail" />
+      </button>
+
+      <button
+        data-src="https://placehold.co/1100x830/ccc5bc/6b6b6b?text=Painting+3"
+        data-title="Third Painting"
+        data-caption="Watercolor · 2023"
+      >
+        <img src="https://placehold.co/180x140/ccc5bc/6b6b6b?text=3" alt="Painting 3 thumbnail" />
+      </button>
+
+      <button
+        data-src="https://placehold.co/1100x830/bfb9b0/6b6b6b?text=Painting+4"
+        data-title="Fourth Painting"
+        data-caption="Acrylic · 2023"
+      >
+        <img src="https://placehold.co/180x140/bfb9b0/6b6b6b?text=4" alt="Painting 4 thumbnail" />
+      </button>
+
+      <button
+        data-src="https://placehold.co/1100x830/b3aca2/6b6b6b?text=Painting+5"
+        data-title="Fifth Painting"
+        data-caption="Gouache · 2022"
+      >
+        <img src="https://placehold.co/180x140/b3aca2/6b6b6b?text=5" alt="Painting 5 thumbnail" />
+      </button>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Linya Li 李琳娅. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
