@@ -3,6 +3,8 @@
    Palette: off-white bg, near-black text, soft gray accents
    ============================================================ */
 
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Serif+SC:wght@300;400&display=swap');
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -17,8 +19,8 @@
   --border:    #e0ddd8;
   --white:     #ffffff;
 
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: "Lora", "Noto Serif SC", Georgia, serif;
+  --font-serif: "Lora", "Noto Serif SC", Georgia, serif;
 }
 
 html {
@@ -56,7 +58,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--border);
 }
 
 .nav-brand {
@@ -122,17 +123,26 @@ footer {
   flex-shrink: 0;
   background: none;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
+  padding: 0.5rem;
   color: var(--muted);
-  padding: 0.5rem 0.75rem;
   transition: color 0.2s;
-  line-height: 1;
-  user-select: none;
+  display: flex;
+  align-items: center;
 }
 
 .hero-arrow:hover {
   color: var(--text);
+}
+
+.hero-arrow svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .gallery-hero {
@@ -144,17 +154,18 @@ footer {
   position: relative;
 }
 
-.gallery-hero img {
+.hero-slide {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1;
-  transition: opacity 0.35s ease;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.47, 0, 0.745, 0.715);
+  will-change: opacity;
 }
 
-.gallery-hero img.fading {
-  opacity: 0;
-}
+.hero-slide.active { opacity: 1; }
 
 .gallery-caption {
   margin-top: 1rem;
@@ -174,39 +185,31 @@ footer {
   margin-top: 0.25rem;
 }
 
-.gallery-thumbnails {
+.gallery-dots {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 0.75rem;
-  margin-top: 1.75rem;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
 }
 
-.gallery-thumbnails button {
-  width: 90px;
-  height: 70px;
-  padding: 0;
-  border: 2px solid transparent;
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
   background: var(--border);
   cursor: pointer;
-  overflow: hidden;
-  transition: border-color 0.2s, opacity 0.2s;
-  opacity: 0.65;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
 }
 
-.gallery-thumbnails button img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.dot:hover {
+  background: var(--muted);
 }
 
-.gallery-thumbnails button:hover {
-  opacity: 0.9;
-}
-
-.gallery-thumbnails button.active {
-  border-color: var(--text);
-  opacity: 1;
+.dot.active {
+  background: var(--text);
+  transform: scale(1.3);
 }
 
 /* ============================================================
