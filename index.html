@@ -20,28 +20,24 @@
   <main>
 
     <!-- ── Hero image ─────────────────────────────────────── -->
-    <div class="gallery-hero-wrapper">
-      <button class="hero-arrow" id="prev-btn" aria-label="Previous painting">
+    <div class="gallery-hero" id="gallery-hero">
+      <!--
+        TO ADD YOUR PAINTINGS:
+        1. Place your image files in the images/ folder.
+        2. Change the src attributes below to match your filenames,
+           e.g. src="images/my-painting.jpg"
+        3. Update the data-title and data-caption attributes on each
+           dot button to match each painting's info.
+      -->
+      <img
+        class="hero-slide active"
+        src="images/swallowed.jpg"
+        alt="Swallowed"
+      />
+      <button class="hero-arrow hero-arrow-left" id="prev-btn" aria-label="Previous painting">
         <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
       </button>
-
-      <div class="gallery-hero" id="gallery-hero">
-        <!--
-          TO ADD YOUR PAINTINGS:
-          1. Place your image files in the images/ folder.
-          2. Change the src attributes below to match your filenames,
-             e.g. src="images/my-painting.jpg"
-          3. Update the data-title and data-caption attributes on each
-             dot button to match each painting's info.
-        -->
-        <img
-          class="hero-slide active"
-          src="images/swallowed.jpg"
-          alt="Swallowed"
-        />
-      </div>
-
-      <button class="hero-arrow" id="next-btn" aria-label="Next painting">
+      <button class="hero-arrow hero-arrow-right" id="next-btn" aria-label="Next painting">
         <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
     </div>
@@ -55,8 +51,9 @@
     <!-- ── Dots ───────────────────────────────────────────── -->
     <!-- Each button: set data-src, data-title, data-caption to match your painting -->
     <div class="gallery-dots" id="dots">
-      <button class="dot active" data-src="images/swallowed.jpg" data-title="Swallowed" data-caption="Oil on canvas, 20x24in, 2026" aria-label="Painting 1"></button>
-      <button class="dot"        data-src="images/escaped.jpeg"  data-title="Escaped"   data-caption="Oil on canvas, 20x24in, 2026" aria-label="Painting 2"></button>
+      <button class="dot active" data-src="images/swallowed.jpg" data-title="Swallowed" data-caption="Oil on canvas, 20x24in, 2026"      aria-label="Painting 1"></button>
+      <button class="dot"        data-src="images/escaped.jpeg"  data-title="Escaped"   data-caption="Oil on canvas, 20x24in, 2026"      aria-label="Painting 2"></button>
+      <button class="dot"        data-src="images/two.jpg"       data-title="Two"       data-caption="Oil, paper on canvas, 20x24in, 2026" aria-label="Painting 3"></button>
     </div>
 
   </main>

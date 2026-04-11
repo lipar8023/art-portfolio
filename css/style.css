@@ -3,7 +3,7 @@
    Palette: off-white bg, near-black text, soft gray accents
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Serif+SC:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Serif+SC:wght@400&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -64,6 +64,7 @@ nav {
   font-family: var(--font-serif);
   font-size: 1.25rem;
   letter-spacing: 0.02em;
+  font-weight: 400;
 }
 
 .nav-links {
@@ -113,15 +114,11 @@ footer {
    Gallery — Hero + Thumbnail strip (index.html)
    ============================================================ */
 
-.gallery-hero-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
-}
-
 .hero-arrow {
-  flex-shrink: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
   background: none;
   border: none;
   cursor: pointer;
@@ -131,6 +128,9 @@ footer {
   display: flex;
   align-items: center;
 }
+
+.hero-arrow-left  { left: -3rem; }
+.hero-arrow-right { right: -3rem; }
 
 .hero-arrow:hover {
   color: var(--text);
@@ -147,10 +147,11 @@ footer {
 }
 
 .gallery-hero {
-  flex: 1;
-  height: min(680px, 80vh);
+  height: 680px;
+  max-height: 80vh;
   max-width: 760px;
-  overflow: hidden;
+  margin: 0 auto;
+  overflow: visible;
   background: var(--bg);
   position: relative;
 }
@@ -161,6 +162,7 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  object-position: top;
   opacity: 0;
   transition: opacity 0.6s cubic-bezier(0.47, 0, 0.745, 0.715);
   will-change: opacity;
@@ -346,7 +348,31 @@ footer {
   }
 
   main {
-    padding: 2rem 1.25rem 4rem;
+    padding: 1rem 1.25rem 4rem;
+  }
+
+  .gallery-hero {
+    max-width: 100%;
+    height: 220px;
+  }
+
+  .hero-arrow-left  { left: -1rem; }
+  .hero-arrow-right { right: -1rem; }
+
+  .gallery-caption {
+    margin-top: 0.75rem;
+  }
+
+  .gallery-caption h2 {
+    font-size: 0.9rem;
+  }
+
+  .gallery-caption p {
+    font-size: 0.75rem;
+  }
+
+  .gallery-dots {
+    margin-top: 1rem;
   }
 
   .about-layout {
